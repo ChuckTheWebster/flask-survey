@@ -7,3 +7,14 @@ app.config['SECRET_KEY'] = "never-tell!"
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 
 debug = DebugToolbarExtension(app)
+
+responses = []
+#we will append answers to responses
+
+@app.get('/')
+def show_home():
+
+    title = survey.title
+    instructions = survey.instructions
+
+    return render_template("survey_start.html", title=title, instructions=instructions)
