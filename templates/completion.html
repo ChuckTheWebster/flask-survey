@@ -4,4 +4,12 @@
 
   <h1>Thanks for completing this survey!</h1>
 
+  <p>{{ session["responses"] }}</p>
+  <ul>
+
+    {% for num in range(session["questions_length"]) %}
+    <li>{{ questions[num].prompt }}: {{ session["responses"][num] }}</li>
+    {% endfor %}
+  </ul>
+
 {% endblock %}
